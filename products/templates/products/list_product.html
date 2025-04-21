@@ -1,37 +1,34 @@
 {% extends "base.html" %}
 
 {% block content %}
-<!--
-  Heads up! 👋
-
-  This component comes with some `rtl` classes. Please remove them if they are not needed in your project.
--->
-
-<section
-  class="overflow-hidden bg-[url(https://wallpapercat.com/w/full/8/f/3/584702-3840x2160-desktop-4k-cafe-wallpaper.jpg)] bg-cover bg-top bg-no-repeat"
->
-  <div class="bg-black/50 p-8 md:p-12 lg:px-16 lg:py-24">
-    <div class="text-center ltr:sm:text-left rtl:sm:text-right">
-      <h2 class="text-2xl font-bold text-white sm:text-3xl md:text-5xl">Lista de productos</h2>
-
-      <p class="hidden max-w-lg text-white/90 md:mt-6 md:block md:text-lg md:leading-relaxed">
-        La mejor fuente de cafeína que tu alma necesita
-      </p>
-
-      <div class="mt-4 sm:mt-8">
-        <a
-          href="#"
-          class="inline-block rounded-full bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:ring-3 focus:ring-yellow-400 focus:outline-hidden"
-        >
-          Get Yours Today
-        </a>
+  <section>
+    <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8">
+        <div>
+          <div class="max-w-lg md:max-w-none">
+            <h2 class="text-2xl font-semibold text-gray-900 sm:text-3xl">
+              Lista de productos
+            </h2>
+  
+            <p class="mt-4 text-gray-700">
+              La mejor fuente de cafeína que tu alma necesita
+            </p>
+          </div>
+        </div>
+  
+        <div>
+          <img
+            src="https://wallpapercat.com/w/full/8/f/3/584702-3840x2160-desktop-4k-cafe-wallpaper.jpg"
+            class="rounded"
+            alt=""
+          />
+        </div>
       </div>
     </div>
-  </div>
-</section>
-{% comment %} <h1 class="text-3xl font-bold underline">
-    Lista de productos
-</h1> {% endcomment %}
+  </section>
+  {% comment %} <h1 class="text-3xl font-bold underline">
+      Lista de productos
+  </h1> {% endcomment %}
     {% for product in products %}
     <a href="#" class="group relative inline-block overflow-hidden">
         <button
