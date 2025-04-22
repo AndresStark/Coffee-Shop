@@ -29,7 +29,7 @@
                 </a>
                 </div>
         
-                <div class="md:flex md:items-center md:gap-12">
+                <div class="md:flex md:items-center md:gap-8">
                 {% comment %} <nav aria-label="Global" class="hidden md:block">
                     <ul class="flex items-center gap-6 text-sm">
                     <li>
@@ -58,6 +58,11 @@
                     </ul>
                 </nav> {% endcomment %}
                 {% if user.is_authenticated %}
+                    <a
+                    class="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm"
+                    href="{% url "my_order" %}">
+                        Mi pedido
+                    </a>
                     <div class="invisible hover:visible hidden md:relative md:block">
                         <button
                         type="button"
@@ -130,6 +135,8 @@
                             </form>
                         </div>
                         </div>
+                    </div>
+                    <div class="hidden sm:flex">
                     </div>
                 {% else %}
                     <div class="sm:flex sm:gap-4">
