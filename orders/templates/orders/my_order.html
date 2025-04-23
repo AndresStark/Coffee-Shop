@@ -54,7 +54,8 @@
                                 class="h-8 w-12 rounded-sm border-gray-200 bg-gray-50 p-0 text-center text-xs text-gray-600 [-moz-appearance:_textfield] focus:outline-hidden [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
                               />
                             </form>
-              
+                          <form action="{% url "remove_product" pk=product_item.id %}" method="post">
+                            {% csrf_token %}
                             <button class="text-gray-600 transition hover:text-red-600">
                               <span class="sr-only">Remove item</span>
               
@@ -73,6 +74,7 @@
                                 />
                               </svg>
                             </button>
+                          </form>
                           </div>
                         </li>
                     {% endfor %}
@@ -83,14 +85,14 @@
                           <dl class="space-y-0.5 text-sm text-gray-700">
                             <div class="flex justify-between">
                               <dt>Subtotal</dt>
-                              <dd>$100</dd>
+                              <dd>${{order.subtotal}}</dd>
                             </div>
               
-                            {% comment %} <div class="flex justify-between">
-                              <dt>VAT</dt>
-                              <dd>$25</dd>
+                            <div class="flex justify-between">
+                              <dt>IVA (13%)</dt>
+                              <dd>${{order.iva}}</dd>
                             </div>
-              
+                            {% comment %}
                             <div class="flex justify-between">
                               <dt>Discount</dt>
                               <dd>-$20</dd>
@@ -98,7 +100,7 @@
               
                             <div class="flex justify-between !text-base font-medium">
                               <dt>Total</dt>
-                              <dd>$200</dd>
+                              <dd>${{order.total}}</dd>
                             </div>
                           </dl>
               
